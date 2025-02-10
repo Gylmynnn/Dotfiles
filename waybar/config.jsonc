@@ -1,0 +1,271 @@
+{
+  "layer": "bottom",
+  "position": "bottom",
+  // "spacing": 6,
+  "margin-left": 150,
+  "margin-right": 150,
+  "margin-bottom": 16,
+  "margin-top": 0,
+  "exclusive": true,
+  "gtk-layer-shell": true,
+  "passthrough": false,
+  "fixed-center": true,
+  "modules-left": [
+    "custom/padd",
+    "hyprland/workspaces",
+    "custom/padd",
+    "custom/lshape",
+    "clock",
+    "clock#simpleclock"
+    // "hyprland/window",
+  ],
+  "modules-center": ["custom/notification"],
+  "modules-right": [
+    "custom/padd",
+    "custom/l_end",
+    "custom/lshape2",
+    "cpu",
+    "custom/padd",
+    "custom/lshape3",
+    "memory",
+    "custom/padd",
+    "battery",
+    // "custom/cpu_gpu",
+    // "custom/padd",
+    "custom/padd",
+
+    "pulseaudio",
+    "backlight",
+    // "clock",
+    "tray",
+    "custom/notification",
+    "custom/power",
+    "custom/padd",
+  ],
+  "custom/spotify": {
+    "format": "{}",
+    "return-type": "json",
+    "on-click": "playerctl -p spotify play-pause",
+    "on-click-right": "spotifatius toggle-liked",
+    "on-click-middle": "playerctl -p spotify next",
+    "exec": "spotifatius monitor",
+  },
+  "mpris": {
+    "player": "spotify",
+    "dynamic-order": ["artist", "title"],
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "status-icons": {
+      "paused": ""
+    },
+    "player-icons": {
+      "default": ""
+    }
+  },
+
+  // "network": {
+  //     "interface": "wlan0",
+  //     "format-up": "{signalStrength}%",
+  //     "format-down": "Disconnected"
+  // },
+
+  // "custom/cpu_gpu": {
+  //     "format": "{}",
+  //     "exec": "./custom-scripts/cpu-gpu.sh",
+  //     "return-type": "text",
+  //     "interval": 1,
+  //     "tooltip": false,
+  // },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "active": "󰮯",
+      "default": "󰊠",
+      "empty": "<span color='#ffffff'><b>󱙝</b></span>",
+    },
+    "persistent-workspaces": {
+      "*": 6,
+    },
+  },
+
+  "hyprland/window": {
+    "format": " {}",
+    "rotate": 0,
+    "separate-outputs": true,
+    "rewrite": {
+      "ligichi@DeRune:(.*)": "$1 ",
+      "(.*) — Mozilla Firefox": "$1 󰈹",
+      "(.*)Mozilla Firefox": "Firefox 󰈹",
+      "(.*) - Visual Studio Code": "$1 󰨞",
+      "(.*)Visual Studio Code": "Code 󰨞",
+      "(.*) — Dolphin": "$1 󰉋",
+      "(.*)Spotify": "Spotify 󰓇",
+      "(.*)Steam": "Steam 󰓓",
+    },
+    "max-length": 30,
+  },
+  "tray": {
+    "show-passive-items": true,
+    "icon-size": 28,
+    "spacing": 2
+  },
+  "backlight": {
+    "tooltip" : false,
+    "device": "intel_backlight",
+    "format": "<span color='#89B4FA'><b>{icon}</b></span> {percent}%",
+    // "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "format-icons": ["󰃟", "󰃝", "󰃠"],
+    "on-scroll-up": "brightnessctl set 1%+",
+    "on-scroll-down": "brightnessctl set 1%-",
+    "min-length": 6
+    },
+  "clock#simpleclock": {
+    "tooltip": false,
+    "format": "{:%I:%M %p}",
+  },
+  "clock": {
+    "format": "{:L%A},",
+    "calendar": {
+      "format": {
+        "days": "<span weight='normal'>{}</span>",
+        "months": "<span color='#cdd6f4'><b>{}</b></span>",
+        "today": "<span color='#f38ba8' weight='700'><u>{}</u></span>",
+        "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+        "weeks": "<span color='#a6e3a1'><b>W{}</b></span>",
+      },
+      "mode": "month",
+      "mode-mon-col": 1,
+      "on-scroll": 1,
+    },
+    "tooltip-format": "<span color='#cdd6f4' font='Lexend 16'><tt><small>{calendar}</small></tt></span>",
+  },
+  "cpu": {
+    "format": "{load} %",
+    "tooltip": true,
+    "interval": 1,
+  },
+  "memory": {
+    "format": "{used:0.1f} GiB",
+  },
+  "pulseaudio": {
+    "format": "<span color='#a6e3a1'><b>{icon}</b></span>  {volume}%",
+    "format-muted": "  muted",
+    "format-icons": {
+      "headphone": "",
+      "default": [""],
+    },
+    "on-click": "pavucontrol",
+  },
+  "custom/sep": {
+    "format": "|",
+    "tooltip": false,
+  },
+
+  "custom/lshape": {
+    "format": " ",
+    "tooltip": false,
+  },
+
+  "custom/lshape2": {
+    "format": " ",
+    "tooltip": false,
+  },
+
+  "custom/lshape3": {
+    "format": " ",
+    "tooltip": false,
+  },
+
+  "custom/power": {
+    "tooltip": false,
+    "on-click": "logoutlaunch.sh 2",
+    "on-click-right": "logoutlaunch.sh 1",
+    "format": "",
+  },
+  "custom/notification": {
+    "escape": true,
+    "exec": "swaync-client -swb",
+    "exec-if": "which swaync-client",
+    "format": "{icon}",
+    "format-icons": {
+      "none": "󰅺",
+      "notification": "󰡟",
+    },
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "return-type": "json",
+    "tooltip": false,
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20,
+    },
+    "format": "<span color='#94E2D5'><b>{icon}</b></span>  {capacity}%",
+    "rotate": 0,
+    "format-charging": "<span color='#A6E3A1'><b>󱐋</b></span> <span color='#94E2D5'><b>{icon}</b></span>  {capacity}%",
+    "format-plugged": "<span color='#A6E3A1'><b>󱐋</b></span> <span color='#94E2D5'><b>{icon}</b></span>  {capacity}%",
+    // "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""],
+    // "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+  },
+  "custom/padd": {
+    "format": "  ",
+    "interval": "once",
+    "tooltip": false,
+  },
+
+  "custom/l_end": {
+    "format": " ",
+    "interval": "once",
+    "tooltip": false,
+  },
+
+  "custom/r_end": {
+    "format": " ",
+    "interval": "once",
+    "tooltip": false,
+  },
+}
+
+
+// positions generated based on config.ctl //
+
+	"modules-left": ["custom/padd","","custom/padd"],
+	"modules-center": ["custom/padd","","custom/padd"],
+	"modules-right": ["custom/padd","","custom/padd"],
+
+
+// positions generated based on config.ctl //
+
+	"modules-left": ["custom/padd","","custom/padd"],
+	"modules-center": ["custom/padd","","custom/padd"],
+	"modules-right": ["custom/padd","","custom/padd"],
+
+
+// sourced from modules based on config.ctl //
+
+
+
+// positions generated based on config.ctl //
+
+	"modules-left": ["custom/padd","","custom/padd"],
+	"modules-center": ["custom/padd","","custom/padd"],
+	"modules-right": ["custom/padd","","custom/padd"],
+
+
+// sourced from modules based on config.ctl //
+
+
+
+// positions generated based on config.ctl //
+
+	"modules-left": ["custom/padd","","custom/padd"],
+	"modules-center": ["custom/padd","","custom/padd"],
+	"modules-right": ["custom/padd","","custom/padd"],
+
+
+// sourced from modules based on config.ctl //
+

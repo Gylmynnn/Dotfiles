@@ -1,0 +1,144 @@
+
+* {
+  min-height: 0;
+  min-width: 0;
+  font-family: Lexend, "JetBrainsMono Nerd Font";
+  font-size: 14px;
+  font-weight: 600;
+}
+
+window#waybar {
+  transition-property: background-color;
+    border-radius: 0px;
+  transition-duration: 0.5s;
+  background-color: #1e1e2e;
+  /* background-color: #181825; */
+  /* background-color: #11111b; */
+  /* background-color: rgba(24, 24, 37, 0.6); */
+}
+
+#workspaces {
+  background: #313244;
+  padding: 0rem 0.9rem;
+  margin: 0.6rem 0rem;
+    border-radius: 0px;
+}
+
+#workspaces button {
+  font-size: 20px;
+  padding: 0.3rem 0.4rem;
+  margin: 0rem 0.25rem;
+    border-radius: 0px;
+  /* background-color: #1e1e2e; */
+  color: #94e2d5;
+}
+
+#workspaces button:hover {
+  color: #89b4fa;
+  /* background-color: #cdd6f4; */
+}
+
+#workspaces button.active {
+  /* background-color: #cdd6f4; */
+  color: #f38ba8;
+  /* content: "󰊠"; */
+}
+
+#workspaces button.urgent {
+  background-color: #1e1e2e;
+  color: #f38ba8;
+}
+
+#clock,
+#pulseaudio,
+#custom-logo,
+#custom-power,
+#custom-spotify,
+#custom-notification,
+#cpu,
+#tray,
+#memory,
+#battery,
+#mpris {
+  padding: 0.3rem 0.6rem;
+  margin: 0.6rem 0.25rem;
+    border-radius: 0px;
+  background-color: #313244;
+  /* background-color: #1f1f2f; */
+}
+
+#mpris.playing {
+  color: #a6e3a1;
+}
+
+/* #custom-l_end { */
+    border-radius: 0px;
+/*   margin: 0.6rem 0rem; */
+/*   padding-left: 12px; */
+/*   background-color: #94e2d5; */
+/* } */
+
+#mpris.paused {
+  color: #9399b2;
+}
+
+#custom-sep {
+  padding: 0px;
+  color: #585b70;
+}
+
+window#waybar.empty #window {
+  /* background-color: transparent; */
+}
+
+#cpu {
+  color: #94e2d5;
+  /* margin: 0.6rem 0rem; */
+  /* color: #1f1f2f; */
+}
+
+#memory {
+  color: #cba6f7;
+  /* background-color: #cba6f7; */
+  /* color: #1f1f2f; */
+}
+
+#clock {
+  color: #74c7ec;
+  /* background-color: #74c7ec; */
+  /* color: #1f1f2f; */
+}
+
+#clock.simpleclock {
+  color: #89b4fa;
+  /* background-color: #89b4fa; */
+  /* color: #1f1f2f; */
+}
+
+#window {
+  color: #cdd6f4;
+}
+
+#pulseaudio {
+  color: #b4befe;
+  /* background-color: #b4befe; */
+  /* color: #1f1f2f; */
+}
+
+#pulseaudio.muted {
+  color: #a6adc8;
+}
+
+#custom-logo {
+  color: #89b4fa;
+}
+
+#custom-power {
+  color: #f38ba8;
+  margin-right: 16px;
+}
+
+tooltip {
+  background-color: #181825;
+  border: 2px solid #89b4fa;
+}
