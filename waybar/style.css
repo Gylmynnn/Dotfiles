@@ -123,8 +123,18 @@ window#waybar.empty #window {
   background-color: #313244;
   color: #ffffff;
   margin: 0.6rem 0px;
-  padding-right: 8px;
   padding-left: 4px;
+  padding-right: 10px;
+  border-radius: 0px 16px 16px 0px;
+}
+
+#network {
+  font-size: 18px;
+  background-color: #313244;
+  color: #ffffff;
+  margin: 0.6rem 0px;
+  padding-right: 15px;
+  padding-left: 10px;
   border-radius: 0px 16px 16px 0px;
 }
 
@@ -164,8 +174,19 @@ window#waybar.empty #window {
   border-radius: 16px 0px 0px 16px;
 }
 
+#custom-lshape4 {
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #89b4fa;
+  color: #313244;
+  margin: 0.6rem 0px;
+  padding-left: 16px;
+  padding-right: 8px;
+  border-radius: 16px 0px 0px 16px;
+}
+
 #custom-power {
-  color: #1e1d2d;
+  color: #313244;
   font-size: 16px;
   background-color: #f38ba8;
   padding-right: 14px;

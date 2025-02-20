@@ -2,8 +2,8 @@
   "layer": "bottom",
   "position": "bottom",
   // "spacing": 6,
-  "margin-left": 150,
-  "margin-right": 150,
+  "margin-left": 100,
+  "margin-right": 100,
   "margin-bottom": 16,
   "margin-top": 0,
   "exclusive": true,
@@ -30,17 +30,21 @@
     "memory",
     "custom/padd",
     "battery",
-    // "custom/cpu_gpu",
-    // "custom/padd",
     "custom/padd",
-
-    "pulseaudio",
-    "backlight",
-    // "clock",
-    "tray",
-    "custom/notification",
     "custom/power",
     "custom/padd",
+    "pulseaudio",
+    "backlight",
+    "custom/padd",
+    "custom/lshape4",
+    "network",
+
+    // "clock",
+
+
+    "tray",
+    "custom/notification",
+    "custom/padd"
   ],
   "custom/spotify": {
     "format": "{}",
@@ -63,11 +67,20 @@
     }
   },
 
-  // "network": {
-  //     "interface": "wlan0",
-  //     "format-up": "{signalStrength}%",
-  //     "format-down": "Disconnected"
-  // },
+
+
+
+"network": {
+	// "interface": "wlp2s0",
+	"format": "{ifname}",
+	"format-wifi": "{bandwidthUpBytes}",
+	"format-ethernet": "{ifname} ",
+	"tooltip-format": "{ifname}",
+	"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+	"tooltip-format-ethernet": "{ifname} ",
+	"tooltip-format-disconnected": "Disconnected",
+	// "max-length": 1000
+},
 
   // "custom/cpu_gpu": {
   //     "format": "{}",
@@ -178,6 +191,11 @@
     "tooltip": false,
   },
 
+  "custom/lshape4": {
+    "format": " ",
+    "tooltip": false,
+  },
+
   "custom/power": {
     "tooltip": false,
     "on-click": "logoutlaunch.sh 2",
@@ -236,36 +254,4 @@
 	"modules-left": ["custom/padd","","custom/padd"],
 	"modules-center": ["custom/padd","","custom/padd"],
 	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
-
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
-
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
 
