@@ -1,9 +1,8 @@
 {
   "layer": "bottom",
   "position": "bottom",
-  // "spacing": 6,
-  "margin-left": 100,
-  "margin-right": 100,
+  "margin-left": 130,
+  "margin-right": 130,
   "margin-bottom": 16,
   "margin-top": 0,
   "exclusive": true,
@@ -13,6 +12,16 @@
   "modules-left": [
     "custom/padd",
     "hyprland/workspaces",
+    "custom/padd",
+    "custom/padd",
+    "custom/dolphin",
+    "custom/padd",
+    "custom/vscode",
+    "custom/padd",
+    "custom/kitty",
+    "custom/padd",
+    "custom/zen",
+    "custom/padd",
     "custom/padd",
     "custom/lshape",
     "clock",
@@ -31,13 +40,13 @@
     "custom/padd",
     "battery",
     "custom/padd",
-    "custom/power",
-    "custom/padd",
+    // "custom/power",
+    // "custom/padd",
     "pulseaudio",
     "backlight",
-    "custom/padd",
-    "custom/lshape4",
-    "network",
+    // "custom/padd",
+    // "custom/lshape4",
+    // "network",
 
     // "clock",
 
@@ -52,7 +61,7 @@
     "on-click": "playerctl -p spotify play-pause",
     "on-click-right": "spotifatius toggle-liked",
     "on-click-middle": "playerctl -p spotify next",
-    "exec": "spotifatius monitor",
+    "exec": "spotifatius monitor"
   },
   "mpris": {
     "player": "spotify",
@@ -71,24 +80,49 @@
 
 
 "network": {
-	// "interface": "wlp2s0",
 	"format": "{ifname}",
 	"format-wifi": "{bandwidthUpBytes}",
 	"format-ethernet": "{ifname} ",
 	"tooltip-format": "{ifname}",
 	"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
 	"tooltip-format-ethernet": "{ifname} ",
-	"tooltip-format-disconnected": "Disconnected",
-	// "max-length": 1000
+	"tooltip-format-disconnected": "Disconnected"
 },
 
-  // "custom/cpu_gpu": {
-  //     "format": "{}",
-  //     "exec": "./custom-scripts/cpu-gpu.sh",
-  //     "return-type": "text",
-  //     "interval": 1,
-  //     "tooltip": false,
-  // },
+
+  "custom/vscode": {
+      "format": " ",
+      "on-click": "/usr/bin/code",
+      "return-type": "text",
+      "interval": 1,
+      "tooltip": false
+  },
+
+
+  "custom/kitty": {
+      "format": " ",
+      "on-click": "/usr/bin/neovide",
+      "return-type": "text",
+      "interval": 1,
+      "tooltip": false
+  },
+
+  "custom/dolphin": {
+      "format": "󰝰 ",
+      "on-click": "/usr/bin/dolphin",
+      "return-type": "text",
+      "interval": 1,
+      "tooltip": false
+  },
+
+  "custom/zen": {
+      "format": " ",
+      "on-click": "/usr/bin/zen-browser",
+      "return-type": "text",
+      "interval": 1,
+      "tooltip": false
+  },
+
 
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -96,11 +130,11 @@
     "format-icons": {
       "active": "󰮯",
       "default": "󰊠",
-      "empty": "<span color='#ffffff'><b>󱙝</b></span>",
+      "empty": "<span color='#ffffff'><b>󱙝</b></span>"
     },
     "persistent-workspaces": {
-      "*": 6,
-    },
+      "*": 6
+    }
   },
 
   "hyprland/window": {
@@ -115,9 +149,9 @@
       "(.*)Visual Studio Code": "Code 󰨞",
       "(.*) — Dolphin": "$1 󰉋",
       "(.*)Spotify": "Spotify 󰓇",
-      "(.*)Steam": "Steam 󰓓",
+      "(.*)Steam": "Steam 󰓓"
     },
-    "max-length": 30,
+    "max-length": 30
   },
   "tray": {
     "show-passive-items": true,
@@ -128,7 +162,6 @@
     "tooltip" : false,
     "device": "intel_backlight",
     "format": "<span color='#89B4FA'><b>{icon}</b></span> {percent}%",
-    // "format-icons": ["", "", "", "", "", "", "", "", ""],
     "format-icons": ["󰃟", "󰃝", "󰃠"],
     "on-scroll-up": "brightnessctl set 1%+",
     "on-scroll-down": "brightnessctl set 1%-",
@@ -136,7 +169,7 @@
     },
   "clock#simpleclock": {
     "tooltip": false,
-    "format": "{:%I:%M %p}",
+    "format": "{:%I:%M %p}"
   },
   "clock": {
     "format": "{:L%A},",
@@ -146,61 +179,61 @@
         "months": "<span color='#cdd6f4'><b>{}</b></span>",
         "today": "<span color='#f38ba8' weight='700'><u>{}</u></span>",
         "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
-        "weeks": "<span color='#a6e3a1'><b>W{}</b></span>",
+        "weeks": "<span color='#a6e3a1'><b>W{}</b></span>"
       },
       "mode": "month",
       "mode-mon-col": 1,
-      "on-scroll": 1,
+      "on-scroll": 1
     },
-    "tooltip-format": "<span color='#cdd6f4' font='Lexend 16'><tt><small>{calendar}</small></tt></span>",
+    "tooltip-format": "<span color='#cdd6f4' font='Lexend 16'><tt><small>{calendar}</small></tt></span>"
   },
   "cpu": {
     "format": "{load} %",
     "tooltip": true,
-    "interval": 1,
+    "interval": 1
   },
   "memory": {
-    "format": "{used:0.1f} GiB",
+    "format": "{used:0.1f} GiB"
   },
   "pulseaudio": {
     "format": "<span color='#a6e3a1'><b>{icon}</b></span>  {volume}%",
     "format-muted": "  muted",
     "format-icons": {
       "headphone": "",
-      "default": [""],
+      "default": [""]
     },
-    "on-click": "pavucontrol",
+    "on-click": "pavucontrol"
   },
   "custom/sep": {
     "format": "|",
-    "tooltip": false,
+    "tooltip": false
   },
 
   "custom/lshape": {
     "format": " ",
-    "tooltip": false,
+    "tooltip": false
   },
 
   "custom/lshape2": {
-    "format": " ",
-    "tooltip": false,
+    "format": " ",
+    "tooltip": false
   },
 
   "custom/lshape3": {
     "format": " ",
-    "tooltip": false,
+    "tooltip": false
   },
 
   "custom/lshape4": {
     "format": " ",
-    "tooltip": false,
+    "tooltip": false
   },
 
   "custom/power": {
     "tooltip": false,
     "on-click": "logoutlaunch.sh 2",
     "on-click-right": "logoutlaunch.sh 1",
-    "format": "",
+    "format": ""
   },
   "custom/notification": {
     "escape": true,
@@ -209,17 +242,17 @@
     "format": "{icon}",
     "format-icons": {
       "none": "󰅺",
-      "notification": "󰡟",
+      "notification": "󰡟"
     },
     "on-click": "sleep 0.1 && swaync-client -t -sw",
     "return-type": "json",
-    "tooltip": false,
+    "tooltip": false
   },
   "battery": {
     "states": {
       "good": 95,
       "warning": 30,
-      "critical": 20,
+      "critical": 20
     },
     "format": "<span color='#94E2D5'><b>{icon}</b></span>  {capacity}%",
     "rotate": 0,
@@ -232,20 +265,20 @@
   "custom/padd": {
     "format": "  ",
     "interval": "once",
-    "tooltip": false,
+    "tooltip": false
   },
 
   "custom/l_end": {
     "format": " ",
     "interval": "once",
-    "tooltip": false,
+    "tooltip": false
   },
 
   "custom/r_end": {
     "format": " ",
     "interval": "once",
-    "tooltip": false,
-  },
+    "tooltip": false
+  }
 }
 
 

@@ -67,8 +67,8 @@ window#waybar.empty #window {
 #cpu {
   font-size: 16px;
   color: #ffffff;
-  padding-right: 14px;
-  padding-left: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
   background-color: #313244;
   margin: 0.6rem 0px;
   border-radius: 0px 16px 16px 0px;
@@ -79,8 +79,8 @@ window#waybar.empty #window {
   background-color: #313244;
   color: #ffffff;
   margin: 0.6rem 0px;
-  padding-left: 10px;
-  padding-right: 14px;
+  padding-left: 15px;
+  padding-right: 15px;
   border-radius: 0px 16px 16px 0px;
 }
 
@@ -129,12 +129,12 @@ window#waybar.empty #window {
 }
 
 #network {
-  font-size: 18px;
+  font-size: 16px;
   background-color: #313244;
   color: #ffffff;
   margin: 0.6rem 0px;
   padding-right: 15px;
-  padding-left: 10px;
+  padding-left: 15px;
   border-radius: 0px 16px 16px 0px;
 }
 
@@ -151,16 +151,16 @@ window#waybar.empty #window {
   color: yellow;
   background-color: #313244;
   margin: 0.6rem 0px;
-  padding-left: 12px;
+  padding-left: 14px;
   border-radius: 16px 0px 0px 16px;
 }
 #custom-lshape2 {
-  font-size: 20px;
+  font-size: 21px;
   background-color: #94e2d5;
   color: #313244;
   margin: 0.6rem 0px;
-  padding-left: 16px;
-  padding-right: 4px;
+  padding-left: 18px;
+  padding-right: 6px;
   border-radius: 16px 0px 0px 16px;
 }
 
@@ -169,7 +169,7 @@ window#waybar.empty #window {
   background-color: #f38ba8;
   color: #313244;
   margin: 0.6rem 0px;
-  padding-left: 16px;
+  padding-left: 20px;
   padding-right: 8px;
   border-radius: 16px 0px 0px 16px;
 }
@@ -193,6 +193,26 @@ window#waybar.empty #window {
   padding-left: 10px;
   margin: 0.8rem 0rem;
   border-radius: 1000px;
+}
+
+#custom-vscode {
+  font-size: 24px;
+  color: #89b4fa;
+}
+
+#custom-kitty {
+  font-size: 24px;
+  color: #a6e3a1;
+}
+
+#custom-dolphin {
+  font-size: 24px;
+  color: #ffff00;
+}
+
+#custom-zen {
+  font-size: 24px;
+  color: #f38ba8;
 }
 
 #tray {
